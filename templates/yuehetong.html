@@ -15,15 +15,15 @@
 <meta name="author" content="YCY, yuehetong.com">
 <link rel="icon" href="https://s1.yuehetong.com/favicon.ico">
 <link
-	href="../s1.yuehetong.com/sitemedia/bootstrap-3.3.6/css/bootstrap.min.css"
+	href="/static/sitemedia/bootstrap-3.3.6/css/bootstrap.min.css"
 	rel="stylesheet">
 <link
-	href="../s1.yuehetong.com/sitemedia/font-awesome-4.7.0/css/font-awesome.min.css"
+	href="/static/sitemedia/font-awesome-4.7.0/css/font-awesome.min.css"
 	rel="stylesheet">
-<link href="../s1.yuehetong.com/sitemedia/css/main.css" rel="stylesheet">
+<link href="/static/sitemedia/css/main.css" rel="stylesheet">
 <script
-	src="../s1.yuehetong.com/sitemedia/bootstrap-3.3.6/js/html5shiv.min.js"></script>
-<script src="../s1.yuehetong.com/sitemedia/Respond/respond.min.js"></script>
+	src="/static/sitemedia/bootstrap-3.3.6/js/html5shiv.min.js"></script>
+<script src="/static/sitemedia/Respond/respond.min.js"></script>
 <link
 	href="https://s1.yuehetong.com/sitemedia/Respond/respond-proxy.html"
 	id="respond-proxy" rel="respond-proxy" />
@@ -75,28 +75,36 @@ A.info:hover {
 	<nav class="nav">
 		<div class='container-fluid nav-top-cont'>
 			<div class="navbar-header">
-				<a class="logo1" href="yuehetong.html"><h1>悦合同_专业合同服务商</h1></a><span
+				<a class="logo1" href="yuehetong.html"><h1>悦合同_专业合同服务商 {{error_msg}}</h1></a><span
 					class="logo2">专业合同服务商</span>
 			</div>
 			<div id="navbar-menu">
-				<span id='top-main-menu'><a href='report.html' class='btn'>悦读</a><a
-					href='event.html' class='btn'>悦活动</a><a href='hetongfanben.html'
-					class='btn'>智能合同</a><a href='xiehetong.html' class='btn'>写合同</a><a
-					href='gaihetong.html' class='btn'>审合同</a></span><a
-					href='javascript:toggleMore();' class='btn' id='top-nav-bt'><i
-					class="fa fa-bars" aria-hidden="true"></i></a><span id='nav-login-area'><div
-						id='top-my-menu'>
-						<a href='report.html' class='btn'>悦读</a><a href='event.html'
-							class='btn'>悦活动</a><a href='hetongfanben.html' class='btn'>智能合同</a><a
-							href='xiehetong.html' class='btn'>写合同</a><a href='gaihetong.html'
-							class='btn'>审合同</a>
+				<span id='top-main-menu'>
+					<a href='report.html' class='btn'>悦读</a>
+					<a href='event.html' class='btn'>悦活动</a>
+					<a href='/hetongfanben' class='btn'>智能合同</a>
+					<a href='/xiehetong' class='btn'>写合同</a>
+					<a href='/gaihetong' class='btn'>审合同</a>
+				</span>
+				<a href='javascript:toggleMore();' class='btn' id='top-nav-bt'>
+					<i class="fa fa-bars" aria-hidden="true"></i>
+				</a>
+				<span id='nav-login-area'>
+					<div id='top-my-menu'>
+						<a href='report.html' class='btn'>悦读</a>
+						<a href='event.html' class='btn'>悦活动</a>
+						<a href='/hetongfanben' class='btn'>智能合同</a>
+						<a href='/xiehetong' class='btn'>写合同</a>
+						<a href='/gaihetong' class='btn'>审合同</a>
 					</div>
 					<span class='split'>&nbsp;</span>
-				<script>hasLogin = false;
+				<script>
+				hasLogin = false;
 				</script>
 					<!--<a href='#' class='btn' data-toggle="modal" data-target="#modalLogin">登录</a>-->
-					<a href='#' class='btn' data-toggle="modal" data-target="#modalReg"
-					id='modalReg-bt'><i class="fa fa-user-o"></i> 登陆</a></span>
+					<a href='#' class='btn' data-toggle="modal" data-target="#modalReg"id='modalReg-bt'> <i class="fa fa-user-o"></i> 登陆</a>
+					<a href='#' class='btn' data-toggle="modal" data-target="#modalReg"id='modalReg-bt'> <i class="fa fa-user-o"></i> {{error_msg}}</a>
+				</span>
 			</div>
 		</div>
 	</nav>
@@ -382,27 +390,27 @@ A.info:hover {
 						<div class="carousel-inner" role="listbox">
 							<div class='item active'>
 								<a href='event/56.html'><img
-									src='../s1.yuehetong.com/article_att/images/day_171227/201712271403109706.png'
+									src='/static/article_att/images/day_171227/201712271403109706.png'
 									alt='悦合同成为广东文投创工场的法务服务商'></a>
 							</div>
 							<div class='item '>
 								<a href='event/55.html'><img
-									src='../s1.yuehetong.com/article_att/images/day_171205/201712051123052113.jpg'
+									src='/static/article_att/images/day_171205/201712051123052113.jpg'
 									alt='悦合同在《创客英雄会》上台领奖'></a>
 							</div>
 							<div class='item '>
 								<a href='event/52.html'><img
-									src='../s1.yuehetong.com/article_att/images/day_170904/201709041232455455.png'
+									src='/static/article_att/images/day_170904/201709041232455455.png'
 									alt='恭喜！恭喜悦合同项目荣获第三届中国青年APP大赛创意组银奖！'></a>
 							</div>
 							<div class='item '>
 								<a href='event/50.html'><img
-									src='../s1.yuehetong.com/article_att/images/day_170807/201708071107329034.jpg'
+									src='/static/article_att/images/day_170807/201708071107329034.jpg'
 									alt='喜讯：悦合同进入第四届“创青春”广东青年创新创业大赛80强'></a>
 							</div>
 							<div class='item '>
 								<a href='event/30.html'><img
-									src='../s1.yuehetong.com/article_att/images/day_161206/201612061444424049.jpg'
+									src='/static/article_att/images/day_161206/201612061444424049.jpg'
 									alt='悦合同面向高校学生开展法律实务与司法数据讲座'></a>
 							</div>
 						</div>
@@ -449,63 +457,63 @@ A.info:hover {
 				<b>100+</b>家企业明智的选择
 			</h2>
 			<div class='m-brand'>
-				<img src='../s1.yuehetong.com/clogo/bosk.png' alt='悦合同用户-博思凯电子' />
+				<img src='/static/clogo/bosk.png' alt='悦合同用户-博思凯电子' />
 			</div>
 			<div class='m-brand'>
-				<img src='../s1.yuehetong.com/clogo/xinli001.png' alt='悦合同用户-壹心理' />
+				<img src='/static/clogo/xinli001.png' alt='悦合同用户-壹心理' />
 			</div>
 			<div class='m-brand'>
-				<img src='../s1.yuehetong.com/clogo/wyqc.png' alt='悦合同用户-无忧启程' />
+				<img src='/static/clogo/wyqc.png' alt='悦合同用户-无忧启程' />
 			</div>
 			<div class='m-brand'>
-				<img src='../s1.yuehetong.com/clogo/xns.png' alt='悦合同用户-小女森-品质童装' />
+				<img src='/static/clogo/xns.png' alt='悦合同用户-小女森-品质童装' />
 			</div>
 			<div class='m-brand'>
-				<img src='../s1.yuehetong.com/clogo/rjl.png' alt='悦合同用户-人境庐' />
+				<img src='/static/clogo/rjl.png' alt='悦合同用户-人境庐' />
 			</div>
 			<div class='m-brand'>
-				<img src='../s1.yuehetong.com/clogo/byzs.png' alt='悦合同用户-深圳博云智社科技' />
+				<img src='/static/clogo/byzs.png' alt='悦合同用户-深圳博云智社科技' />
 			</div>
 			<div class='m-brand'>
-				<img src='../s1.yuehetong.com/clogo/ctyxfzjjh.png'
+				<img src='/static/clogo/ctyxfzjjh.png'
 					alt='悦合同用户-中华传统医学发展基金会' />
 			</div>
 			<div class='m-brand'>
-				<img src='../s1.yuehetong.com/clogo/kesuichong.jpg'
+				<img src='/static/clogo/kesuichong.jpg'
 					alt='悦合同用户-睡眠专家瞌睡虫' />
 			</div>
 			<div class='m-brand'>
-				<img src='../s1.yuehetong.com/clogo/yhc.png' alt='悦合同用户-云海潮' />
+				<img src='/static/clogo/yhc.png' alt='悦合同用户-云海潮' />
 			</div>
 			<div class='m-brand'>
-				<img src='../s1.yuehetong.com/clogo/zmr.png' alt='悦合同用户-展门人' />
+				<img src='/static/clogo/zmr.png' alt='悦合同用户-展门人' />
 			</div>
 			<div class='m-brand'>
-				<img src='../s1.yuehetong.com/clogo/rrck.png' alt='悦合同用户-人人车库' />
+				<img src='/static/clogo/rrck.png' alt='悦合同用户-人人车库' />
 			</div>
 			<div class='m-brand'>
-				<img src='../s1.yuehetong.com/clogo/smarter.png'
+				<img src='/static/clogo/smarter.png'
 					alt='悦合同用户-smarter科技' />
 			</div>
 			<div class='m-brand'>
-				<img src='../s1.yuehetong.com/clogo/meiyi1.png' alt='悦合同用户-美益集团' />
+				<img src='/static/clogo/meiyi1.png' alt='悦合同用户-美益集团' />
 			</div>
 			<div class='m-brand'>
-				<img src='../s1.yuehetong.com/clogo/bomboo.jpg' alt='悦合同用户-bomboo' />
+				<img src='/static/clogo/bomboo.jpg' alt='悦合同用户-bomboo' />
 			</div>
 			<div class='m-brand'>
-				<img src='../s1.yuehetong.com/clogo/painimei.jpg' alt='悦合同用户-拍你魅' />
+				<img src='/static/clogo/painimei.jpg' alt='悦合同用户-拍你魅' />
 			</div>
 			<div class='m-brand'>
-				<img src='../s1.yuehetong.com/clogo/dandelo.jpg'
+				<img src='/static/clogo/dandelo.jpg'
 					alt='悦合同用户-金洪运动器材有限公司' />
 			</div>
 			<div class='m-brand'>
-				<img src='../s1.yuehetong.com/clogo/ever-win.jpg'
+				<img src='/static/clogo/ever-win.jpg'
 					alt='悦合同用户-嘉美（香港）贸易' />
 			</div>
 			<div class='m-brand'>
-				<img src='../s1.yuehetong.com/clogo/zway.jpg' alt='悦合同用户-zway' />
+				<img src='/static/clogo/zway.jpg' alt='悦合同用户-zway' />
 			</div>
 			<div class='clearfix'></div>
 		</div>
@@ -515,46 +523,46 @@ A.info:hover {
 			<h2 class='m-h2 m-h2-mb'>悦合同合作方</h2>
 			<div class='c-brand'>
 				<a href='http://www.slashedon.com/' target='_blank' rel="nofollow"><img
-					src='../s1.yuehetong.com/clogo/slashedon.jpg' alt='悦合同合作方-商理事' /></a>
+					src='/static/clogo/slashedon.jpg' alt='悦合同合作方-商理事' /></a>
 			</div>
 			<div class='c-brand'>
 				<a href='http://www.yingkelawyer.com/' target='_blank'
 					rel="nofollow"><img
-					src='../s1.yuehetong.com/clogo/yingkelogo.jpg' alt='悦合同合作方-盈科律师事务所' /></a>
+					src='/static/clogo/yingkelogo.jpg' alt='悦合同合作方-盈科律师事务所' /></a>
 			</div>
 			<div class='c-brand'>
 				<a href='http://www.qcloud.com/' target='_blank' rel="nofollow"><img
-					src='../s1.yuehetong.com/clogo/qcloud.png' alt='悦合同合作方-腾讯云' /></a>
+					src='/static/clogo/qcloud.png' alt='悦合同合作方-腾讯云' /></a>
 			</div>
 			<div class='c-brand'>
 				<a href='http://www.gdhzz.com/' target='_blank' rel="nofollow"><img
-					src='../s1.yuehetong.com/clogo/haizhizhu.jpg'
+					src='/static/clogo/haizhizhu.jpg'
 					alt='悦合同合作方-广州海之珠职业培训学校' /></a>
 			</div>
 			<div class='c-brand'>
 				<a href='http://www.1918office.com/' target='_blank' rel="nofollow"><img
-					src='../s1.yuehetong.com/clogo/1918.png' alt='悦合同合作方-1918青年创业社区' /></a>
+					src='/static/clogo/1918.png' alt='悦合同合作方-1918青年创业社区' /></a>
 			</div>
 			<div class='c-brand'>
 				<a href='http://www.nanjiquan.com/' target='_blank' rel="nofollow"><img
-					src='../s1.yuehetong.com/clogo/nanjiquan.png' alt='悦合同合作方-南极圈' /></a>
+					src='/static/clogo/nanjiquan.png' alt='悦合同合作方-南极圈' /></a>
 			</div>
 			<div class='c-brand'>
-				<img src='../s1.yuehetong.com/clogo/zhizhu.jpg'
+				<img src='/static/clogo/zhizhu.jpg'
 					alt='悦合同合作方-蜘蛛精知识产权服务' />
 			</div>
 			<div class='c-brand'>
 				<a href='http://www.duoyoumi.com/' target='_blank' rel="nofollow"><img
-					src='../s1.yuehetong.com/clogo/duoyoumi.jpg' alt='悦合同合作方-多有米' /></a>
+					src='/static/clogo/duoyoumi.jpg' alt='悦合同合作方-多有米' /></a>
 			</div>
 			<div class='c-brand'>
 				<a href='http://www.makerstreet.com.cn/' target='_blank'
 					rel="nofollow"><img
-					src='../s1.yuehetong.com/clogo/makerstreet2.jpg' alt='悦合同合作方-创客街' /></a>
+					src='/static/clogo/makerstreet2.jpg' alt='悦合同合作方-创客街' /></a>
 			</div>
 			<div class='c-brand'>
 				<a href='http://www.36kr.com/' target='_blank' rel="nofollow"><img
-					src='../s1.yuehetong.com/clogo/36kr.png' alt='悦合同合作方-36Kr' /></a>
+					src='/static/clogo/36kr.png' alt='悦合同合作方-36Kr' /></a>
 			</div>
 			<div class='clearfix'></div>
 		</div>
@@ -760,7 +768,7 @@ A.info:hover {
 			class="fa fa-angle-up" aria-hidden="true"></i></a><a id='rnav-wx'
 			class='rnav-wx' data-cont='微信客服'><i class="fa fa-weixin"></i></a>
 		<div id='rnav-wxc' class='rnav-wxc'>
-			<img src='../s1.yuehetong.com/sitemedia/pics/rnav-wx1.jpg'
+			<img src='/static/sitemedia/pics/rnav-wx1.jpg'
 				alt='微信客服1'>
 			<div id='rnav-wxd'>
 				微信扫码咨询<br>请备注“<b>合同服务</b>”
@@ -773,15 +781,23 @@ A.info:hover {
 		<div id='uitipsbar'>&times;</div>
 		<div id='uitipscont'></div>
 	</div>
-	<script src="../s1.yuehetong.com/sitemedia/js/jquery-1.12.1.min.js"></script>
+	<script src="/static/sitemedia/js/jquery-1.12.1.min.js"></script>
 	<script
-		src="../s1.yuehetong.com/sitemedia/js/jquery.placeholder.min.js"></script>
-	<script>$('#modal-login-name').placeholder();$('#modal-login-pwd').placeholder();$('#modal-reg-name').placeholder();$('#modal-reg-pwd').placeholder();$('#search-key').placeholder();$('#search-key2').placeholder();</script>
+		src="/static/sitemedia/js/jquery.placeholder.min.js"></script>
+	<script>$('#modal-login-name').placeholder();
+	$('#modal-login-pwd').placeholder();
+	$('#modal-reg-name').placeholder();
+	$('#modal-reg-pwd').placeholder();
+	$('#search-key').placeholder();
+	$('#search-key2').placeholder();
+	</script>
+	
+	
 	<script
-		src="../s1.yuehetong.com/sitemedia/bootstrap-3.3.6/js/bootstrap.min.js"></script>
-	<!--[if IE 10]><script src="../s1.yuehetong.com/sitemedia/bootstrap-3.3.6/js/ie10-viewport-bug-workaround.js"></script><![endif]-->
-	<script src="../s1.yuehetong.com/sitemedia/js/gt.js"></script>
-	<script src="../s1.yuehetong.com/sitemedia/js/common.js"></script>
+		src="/static/sitemedia/bootstrap-3.3.6/js/bootstrap.min.js"></script>
+	<!--[if IE 10]><script src="/static/sitemedia/bootstrap-3.3.6/js/ie10-viewport-bug-workaround.js"></script><![endif]-->
+	<script src="/static/sitemedia/js/gt.js"></script>
+	<script src="/static/sitemedia/js/common.js"></script>
 </body>
 </html>
 <script>$(function(){$("#pc1").hover(packHoverIn,packHoverOut);$("#pc2").hover(packHoverIn,packHoverOut);$("#pc3").hover(packHoverIn,packHoverOut);});var iolh = "200px";function packHoverIn(){var thisEle = $(this);thisEle.addClass("hov");var ol = thisEle.find("ol").css("height","auto");thisEle.find(".c1").addClass("c0");}function packHoverOut(){var thisEle = $(this);thisEle.removeClass("hov");var ol = thisEle.find("ol").css("height",iolh);thisEle.find(".c1").removeClass("c0");}</script>

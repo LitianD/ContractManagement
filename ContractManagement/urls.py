@@ -15,7 +15,16 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.conf.urls import url
+from ContractMis import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    url(r'^$', views.login),
+    url(r'^gaihetong/$', views.gaihetong),
+    url(r'^xiehetong/$', views.xiehetong),
+    url(r'^hetongfanben/$', views.home),
+    url(r'^zhuanlijishuxukehetong/$', views.zhuanlijishuxukehetong),
+    url(r'^home/$', views.home),
+    url(r'^logout/$', views.logout),
 ]

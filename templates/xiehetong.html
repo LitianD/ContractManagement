@@ -13,21 +13,21 @@
 <meta name="author" content="YCY, yuehetong.com">
 <link rel="icon" href="https://s1.yuehetong.com/favicon.ico">
 <link
-	href="../s1.yuehetong.com/sitemedia/bootstrap-3.3.6/css/bootstrap.min.css"
+	href="/static/sitemedia/bootstrap-3.3.6/css/bootstrap.min.css"
 	rel="stylesheet">
 <link
-	href="../s1.yuehetong.com/sitemedia/font-awesome-4.7.0/css/font-awesome.min.css"
+	href="/static/sitemedia/font-awesome-4.7.0/css/font-awesome.min.css"
 	rel="stylesheet">
-<link href="../s1.yuehetong.com/sitemedia/css/main.css" rel="stylesheet">
+<link href="/static/sitemedia/css/main.css" rel="stylesheet">
 <script
-	src="../s1.yuehetong.com/sitemedia/bootstrap-3.3.6/js/html5shiv.min.js"></script>
-<script src="../s1.yuehetong.com/sitemedia/Respond/respond.min.js"></script>
+	src="/static/sitemedia/bootstrap-3.3.6/js/html5shiv.min.js"></script>
+<script src="/static/sitemedia/Respond/respond.min.js"></script>
 <link
 	href="https://s1.yuehetong.com/sitemedia/Respond/respond-proxy.html"
 	id="respond-proxy" rel="respond-proxy" />
 <link href="Respond/respond.proxy.gif" id="respond-redirect"
 	rel="respond-redirect" />
-<script src="Respond/respond.proxy.js"></script>
+<script src="/static/Respond/respond.proxy.js"></script>
 <script>var _hmt = _hmt || [];
 	(function() {
 		var hm = document.createElement("script");
@@ -79,11 +79,17 @@ A.info:hover {
 					class="logo2">专业合同服务商</span>
 			</div>
 			<div id="navbar-menu">
-				<span id='top-main-menu'><a href='report.html' class='btn'>悦读</a><a
-					href='event.html' class='btn'>悦活动</a><a href='hetongfanben.html'
-					class='btn'>智能合同</a><a href='xiehetong.html' class='btn'>写合同</a><a
-					href='gaihetong.html' class='btn'>审合同</a></span><a
-					href='javascript:toggleMore();' class='btn' id='top-nav-bt'><i
+
+				<span id='top-main-menu'>
+					<a href='report.html' class='btn'>悦读</a>
+					<a href='event.html' class='btn'>悦活动</a>
+					<a href='../hetongfanben' class='btn'>智能合同</a>
+					<a href='../xiehetong' class='btn'>写合同</a>
+					<a href='../gaihetong' class='btn'>审合同</a>
+				</span>
+
+					
+					<a href='javascript:toggleMore();' class='btn' id='top-nav-bt'><i
 					class="fa fa-bars" aria-hidden="true"></i></a><span id='nav-login-area'><div
 						id='top-my-menu'>
 						<a href='report.html' class='btn'>悦读</a><a href='event.html'
@@ -95,8 +101,10 @@ A.info:hover {
 				<script>hasLogin = false;
 				</script>
 					<!--<a href='#' class='btn' data-toggle="modal" data-target="#modalLogin">登录</a>-->
-					<a href='#' class='btn' data-toggle="modal" data-target="#modalReg"
-					id='modalReg-bt'><i class="fa fa-user-o"></i> 登陆</a></span>
+
+					<a class='btn' href='/my' id='mbt'><i class='fa fa-vine'></i>{{username}}</a>
+					<a class='btn' href='/logout' id='mbt'><i class="fa fa-user-o"></i>登出</a>
+					</span>
 			</div>
 		</div>
 	</nav>
@@ -193,7 +201,7 @@ A.info:hover {
 								<div class='comment-item'>
 									<div class='comment-avatar'>
 										<a href='#nogo'><img
-											src='../s1.yuehetong.com/sitemedia/pics/avt.png'></a>
+											src='/static/sitemedia/pics/avt.png'></a>
 									</div>
 									<div class='comment-body'>
 										<div class='comment-name'>139*****218</div>
@@ -210,7 +218,7 @@ A.info:hover {
 								<div class='comment-item'>
 									<div class='comment-avatar'>
 										<a href='#nogo'><img
-											src='../s1.yuehetong.com/sitemedia/pics/avt.png'></a>
+											src='/static/sitemedia/pics/avt.png'></a>
 									</div>
 									<div class='comment-body'>
 										<div class='comment-name'>138*****227</div>
@@ -227,7 +235,7 @@ A.info:hover {
 								<div class='comment-item'>
 									<div class='comment-avatar'>
 										<a href='#nogo'><img
-											src='../s1.yuehetong.com/sitemedia/pics/avt.png'></a>
+											src='/static/sitemedia/pics/avt.png'></a>
 									</div>
 									<div class='comment-body'>
 										<div class='comment-name'>137*****750</div>
@@ -244,7 +252,7 @@ A.info:hover {
 								<div class='comment-item'>
 									<div class='comment-avatar'>
 										<a href='#nogo'><img
-											src='../s1.yuehetong.com/sitemedia/pics/avt.png'></a>
+											src='/static/sitemedia/pics/avt.png'></a>
 									</div>
 									<div class='comment-body'>
 										<div class='comment-name'>ad**********@li-bang.com</div>
@@ -261,7 +269,7 @@ A.info:hover {
 								<div class='comment-item'>
 									<div class='comment-avatar'>
 										<a href='#nogo'><img
-											src='../s1.yuehetong.com/sitemedia/pics/avt.png'></a>
+											src='/static/sitemedia/pics/avt.png'></a>
 									</div>
 									<div class='comment-body'>
 										<div class='comment-name'>jn***@gzjiangnan.com.cn</div>
@@ -278,7 +286,7 @@ A.info:hover {
 								<div class='comment-item'>
 									<div class='comment-avatar'>
 										<a href='#nogo'><img
-											src='../s1.yuehetong.com/sitemedia/pics/avt.png'></a>
+											src='/static/sitemedia/pics/avt.png'></a>
 									</div>
 									<div class='comment-body'>
 										<div class='comment-name'>137*****163</div>
@@ -295,7 +303,7 @@ A.info:hover {
 								<div class='comment-item'>
 									<div class='comment-avatar'>
 										<a href='#nogo'><img
-											src='../s1.yuehetong.com/sitemedia/pics/avt.png'></a>
+											src='/static/sitemedia/pics/avt.png'></a>
 									</div>
 									<div class='comment-body'>
 										<div class='comment-name'>神的孩子</div>
@@ -312,7 +320,7 @@ A.info:hover {
 								<div class='comment-item'>
 									<div class='comment-avatar'>
 										<a href='#nogo'><img
-											src='../s1.yuehetong.com/sitemedia/pics/avt.png'></a>
+											src='/static/sitemedia/pics/avt.png'></a>
 									</div>
 									<div class='comment-body'>
 										<div class='comment-name'>gz*****@public.guangzhou.gd.cn</div>
@@ -329,7 +337,7 @@ A.info:hover {
 								<div class='comment-item'>
 									<div class='comment-avatar'>
 										<a href='#nogo'><img
-											src='../s1.yuehetong.com/sitemedia/pics/avt.png'></a>
+											src='/static/sitemedia/pics/avt.png'></a>
 									</div>
 									<div class='comment-body'>
 										<div class='comment-name'>ch***@supreme-elec.com</div>
@@ -346,7 +354,7 @@ A.info:hover {
 								<div class='comment-item'>
 									<div class='comment-avatar'>
 										<a href='#nogo'><img
-											src='../s1.yuehetong.com/sitemedia/pics/avt.png'></a>
+											src='/static/sitemedia/pics/avt.png'></a>
 									</div>
 									<div class='comment-body'>
 										<div class='comment-name'>zh*******@austin.com.cn</div>
@@ -363,7 +371,7 @@ A.info:hover {
 								<div class='comment-item'>
 									<div class='comment-avatar'>
 										<a href='#nogo'><img
-											src='../s1.yuehetong.com/sitemedia/pics/avt.png'></a>
+											src='/static/sitemedia/pics/avt.png'></a>
 									</div>
 									<div class='comment-body'>
 										<div class='comment-name'>***@gdzhiyou.com</div>
@@ -380,7 +388,7 @@ A.info:hover {
 								<div class='comment-item'>
 									<div class='comment-avatar'>
 										<a href='#nogo'><img
-											src='../s1.yuehetong.com/sitemedia/pics/avt.png'></a>
+											src='/static/sitemedia/pics/avt.png'></a>
 									</div>
 									<div class='comment-body'>
 										<div class='comment-name'>136*****401</div>
@@ -397,7 +405,7 @@ A.info:hover {
 								<div class='comment-item'>
 									<div class='comment-avatar'>
 										<a href='#nogo'><img
-											src='../s1.yuehetong.com/sitemedia/pics/avt.png'></a>
+											src='/static/sitemedia/pics/avt.png'></a>
 									</div>
 									<div class='comment-body'>
 										<div class='comment-name'>年轻就是资本</div>
@@ -414,7 +422,7 @@ A.info:hover {
 								<div class='comment-item'>
 									<div class='comment-avatar'>
 										<a href='#nogo'><img
-											src='../s1.yuehetong.com/sitemedia/pics/avt.png'></a>
+											src='/static/sitemedia/pics/avt.png'></a>
 									</div>
 									<div class='comment-body'>
 										<div class='comment-name'>**@dfacan.com</div>
@@ -431,7 +439,7 @@ A.info:hover {
 								<div class='comment-item'>
 									<div class='comment-avatar'>
 										<a href='#nogo'><img
-											src='../s1.yuehetong.com/sitemedia/pics/avt.png'></a>
+											src='/static/sitemedia/pics/avt.png'></a>
 									</div>
 									<div class='comment-body'>
 										<div class='comment-name'>蓝轩</div>
@@ -448,7 +456,7 @@ A.info:hover {
 								<div class='comment-item'>
 									<div class='comment-avatar'>
 										<a href='#nogo'><img
-											src='../s1.yuehetong.com/sitemedia/pics/avt.png'></a>
+											src='/static/sitemedia/pics/avt.png'></a>
 									</div>
 									<div class='comment-body'>
 										<div class='comment-name'>年轻就是资本</div>
@@ -465,7 +473,7 @@ A.info:hover {
 								<div class='comment-item'>
 									<div class='comment-avatar'>
 										<a href='#nogo'><img
-											src='../s1.yuehetong.com/sitemedia/pics/avt.png'></a>
+											src='/static/sitemedia/pics/avt.png'></a>
 									</div>
 									<div class='comment-body'>
 										<div class='comment-name'>139*****002</div>
@@ -487,7 +495,7 @@ A.info:hover {
 								<div class='comment-item'>
 									<div class='comment-avatar'>
 										<a href='#nogo'><img
-											src='../s1.yuehetong.com/sitemedia/pics/avt.png'></a>
+											src='/static/sitemedia/pics/avt.png'></a>
 									</div>
 									<div class='comment-body'>
 										<div class='comment-name'>133*****828</div>
@@ -504,7 +512,7 @@ A.info:hover {
 								<div class='comment-item'>
 									<div class='comment-avatar'>
 										<a href='#nogo'><img
-											src='../s1.yuehetong.com/sitemedia/pics/avt.png'></a>
+											src='/static/sitemedia/pics/avt.png'></a>
 									</div>
 									<div class='comment-body'>
 										<div class='comment-name'>12*******@qq.com</div>
@@ -521,7 +529,7 @@ A.info:hover {
 								<div class='comment-item'>
 									<div class='comment-avatar'>
 										<a href='#nogo'><img
-											src='../s1.yuehetong.com/sitemedia/pics/avt.png'></a>
+											src='/static/sitemedia/pics/avt.png'></a>
 									</div>
 									<div class='comment-body'>
 										<div class='comment-name'>139*****318</div>
@@ -779,7 +787,7 @@ A.info:hover {
 			class="fa fa-angle-up" aria-hidden="true"></i></a><a id='rnav-wx'
 			class='rnav-wx' data-cont='微信客服'><i class="fa fa-weixin"></i></a>
 		<div id='rnav-wxc' class='rnav-wxc'>
-			<img src='../s1.yuehetong.com/sitemedia/pics/rnav-wx1.jpg'
+			<img src='/static/sitemedia/pics/rnav-wx1.jpg'
 				alt='微信客服1'>
 			<div id='rnav-wxd'>
 				微信扫码咨询<br>请备注“<b>合同服务</b>”
@@ -792,15 +800,15 @@ A.info:hover {
 		<div id='uitipsbar'>&times;</div>
 		<div id='uitipscont'></div>
 	</div>
-	<script src="../s1.yuehetong.com/sitemedia/js/jquery-1.12.1.min.js"></script>
+	<script src="/static/sitemedia/js/jquery-1.12.1.min.js"></script>
 	<script
-		src="../s1.yuehetong.com/sitemedia/js/jquery.placeholder.min.js"></script>
+		src="/static/sitemedia/js/jquery.placeholder.min.js"></script>
 	<script>$('#modal-login-name').placeholder();$('#modal-login-pwd').placeholder();$('#modal-reg-name').placeholder();$('#modal-reg-pwd').placeholder();$('#search-key').placeholder();$('#search-key2').placeholder();</script>
 	<script
-		src="../s1.yuehetong.com/sitemedia/bootstrap-3.3.6/js/bootstrap.min.js"></script>
-	<!--[if IE 10]><script src="../s1.yuehetong.com/sitemedia/bootstrap-3.3.6/js/ie10-viewport-bug-workaround.js"></script><![endif]-->
-	<script src="../s1.yuehetong.com/sitemedia/js/gt.js"></script>
-	<script src="../s1.yuehetong.com/sitemedia/js/common.js"></script>
+		src="/static/sitemedia/bootstrap-3.3.6/js/bootstrap.min.js"></script>
+	<!--[if IE 10]><script src="/static/sitemedia/bootstrap-3.3.6/js/ie10-viewport-bug-workaround.js"></script><![endif]-->
+	<script src="/static/sitemedia/js/gt.js"></script>
+	<script src="/static/sitemedia/js/common.js"></script>
 </body>
 </html>
 <script>(function(){var bp = document.createElement('script');var curProtocol = window.location.protocol.split(':')[0];if (curProtocol === 'https') {bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';}else {bp.src = 'http://push.zhanzhang.baidu.com/push.js';}var s = document.getElementsByTagName("script")[0];s.parentNode.insertBefore(bp, s);})();</script>

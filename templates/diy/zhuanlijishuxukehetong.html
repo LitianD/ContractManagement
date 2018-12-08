@@ -15,20 +15,20 @@
 <meta name="author" content="YCY, yuehetong.com">
 <link rel="icon" href="https://s1.yuehetong.com/favicon.ico">
 <link
-	href="../../s1.yuehetong.com/sitemedia/bootstrap-3.3.6/css/bootstrap.min.css"
+	href="/static/sitemedia/bootstrap-3.3.6/css/bootstrap.min.css"
 	rel="stylesheet">
 <link
-	href="../../s1.yuehetong.com/sitemedia/font-awesome-4.7.0/css/font-awesome.min.css"
+	href="/static/sitemedia/font-awesome-4.7.0/css/font-awesome.min.css"
 	rel="stylesheet">
 <link rel="stylesheet" media="screen"
-	href="../../s1.yuehetong.com/sitemedia/handsontable/handsontable.full.min.css">
-<link href="../../s1.yuehetong.com/sitemedia/css/main.css"
+	href="/static/sitemedia/handsontable/handsontable.full.min.css">
+<link href="/static/sitemedia/css/main.css"
 	rel="stylesheet">
 <link rel="stylesheet"
-	href="../../s1.yuehetong.com/sitemedia/jquery.ui.smoothness/jquery-ui-1.8.14.datepicker.css">
+	href="/static/sitemedia/jquery.ui.smoothness/jquery-ui-1.8.14.datepicker.css">
 <script
-	src="../../s1.yuehetong.com/sitemedia/bootstrap-3.3.6/js/html5shiv.min.js"></script>
-<script src="../../s1.yuehetong.com/sitemedia/Respond/respond.min.js"></script>
+	src="/static/sitemedia/bootstrap-3.3.6/js/html5shiv.min.js"></script>
+<script src="/static/sitemedia/Respond/respond.min.js"></script>
 <link
 	href="https://s1.yuehetong.com/sitemedia/Respond/respond-proxy.html"
 	id="respond-proxy" rel="respond-proxy" />
@@ -77,17 +77,6 @@ A.info:hover {
 	text-decoration: underline
 }
 </style>
-	<div
-		style='BORDER: 1px solid #DCE6F4; MARGIN-TOP: 20px; MARGIN-BOTTOM: 20px; MARGIN-LEFT: 5px; MARGIN-RIGHT: 5px; PADDING: 5px; BACKGROUND-COLOR: #eef8ff;line-height:180%; COLOR: #000000; font-family: Arial; font-size: 8pt; width=100%; FILTER: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr="#FFFFFFFF", EndColorStr="#F2F5FAFF");'>
-		This page was saved using <a class="applink"
-			href="http://www.spidersoft.com"><b>WebZIP 7.1.2.1052</b></a> <a
-			class="applink" href="http://www.spidersoft.com"><b>offline
-				browser</b></a> on 11/22/18 23:19:24.<br> <b>Address:</b> <a
-			class="info" href="https://yuehetong.com/diy/zhuanlijishuxukehetong">https://yuehetong.com/diy/zhuanlijishuxukehetong</a><br>
-		<b>Title:</b> 专利技术许可合同_悦合同_专业合同服务商 &nbsp;&bull;&nbsp; <b>Size:</b>
-		78960<br>
-	</div>
-	<!-- /Copyright � 2008. Spidersoft Ltd -->
 
 	<nav class="nav">
 		<div class='container-fluid nav-top-cont'>
@@ -96,11 +85,14 @@ A.info:hover {
 					class="logo2">专业合同服务商</span>
 			</div>
 			<div id="navbar-menu">
-				<span id='top-main-menu'><a href='../report.html' class='btn'>悦读</a><a
-					href='../event.html' class='btn'>悦活动</a><a
-					href='../hetongfanben.html' class='btn'>智能合同</a><a
-					href='../xiehetong.html' class='btn'>写合同</a><a
-					href='../gaihetong.html' class='btn'>审合同</a></span><a
+				<span id='top-main-menu'>
+					<a href='report.html' class='btn'>悦读</a>
+					<a href='event.html' class='btn'>悦活动</a>
+					<a href='../hetongfanben' class='btn'>智能合同</a>
+					<a href='../xiehetong' class='btn'>写合同</a>
+					<a href='../gaihetong' class='btn'>审合同</a>
+				</span>
+					<a
 					href='javascript:toggleMore();' class='btn' id='top-nav-bt'><i
 					class="fa fa-bars" aria-hidden="true"></i></a><span id='nav-login-area'><div
 						id='top-my-menu'>
@@ -113,8 +105,10 @@ A.info:hover {
 				<script>hasLogin = false;
 				</script>
 					<!--<a href='#' class='btn' data-toggle="modal" data-target="#modalLogin">登录</a>-->
-					<a href='#' class='btn' data-toggle="modal" data-target="#modalReg"
-					id='modalReg-bt'><i class="fa fa-user-o"></i> 登陆</a></span>
+					<a class='btn' href='/my' id='mbt'><i class='fa fa-vine'></i>{{username}}</a>
+					<a class='btn' href='/logout' id='mbt'><i class="fa fa-user-o"></i>登出</a>
+					
+					</span>
 			</div>
 		</div>
 	</nav>
@@ -1071,10 +1065,10 @@ A.info:hover {
 						</div>
 						<div class='pay-method' id='pay-method' style='text-align:center;'>
 							<a href='javascript:void(0);' data-channel='alipay_pc_direct'><img
-								src='../../s1.yuehetong.com/sitemedia/paylogo/alipay.png'
+								src='/static/sitemedia/paylogo/alipay.png'
 								alt='支付宝支付'></a><a href='javascript:void(0);'
 								data-channel='wx_pub_qr'><img
-								src='../../s1.yuehetong.com/sitemedia/paylogo/weixin.png'
+								src='/static/sitemedia/paylogo/weixin.png'
 								alt='微信扫码支付'></a>
 							<div class='clearfix'></div>
 						</div>
@@ -1301,7 +1295,7 @@ A.info:hover {
 			class="fa fa-angle-up" aria-hidden="true"></i></a><a id='rnav-wx'
 			class='rnav-wx' data-cont='微信客服'><i class="fa fa-weixin"></i></a>
 		<div id='rnav-wxc' class='rnav-wxc'>
-			<img src='../../s1.yuehetong.com/sitemedia/pics/rnav-wx1.jpg'
+			<img src='/static/sitemedia/pics/rnav-wx1.jpg'
 				alt='微信客服1'>
 			<div id='rnav-wxd'>
 				微信扫码咨询<br>请备注“<b>合同服务</b>”
@@ -1314,18 +1308,18 @@ A.info:hover {
 		<div id='uitipsbar'>&times;</div>
 		<div id='uitipscont'></div>
 	</div>
-	<script src="../../s1.yuehetong.com/sitemedia/js/jquery-1.12.1.min.js"></script>
+	<script src="/static/sitemedia/js/jquery-1.12.1.min.js"></script>
 	<script
-		src="../../s1.yuehetong.com/sitemedia/js/jquery.placeholder.min.js"></script>
+		src="/static/sitemedia/js/jquery.placeholder.min.js"></script>
 	<script>$('#modal-login-name').placeholder();$('#modal-login-pwd').placeholder();$('#modal-reg-name').placeholder();$('#modal-reg-pwd').placeholder();$('#search-key').placeholder();$('#search-key2').placeholder();
 	</script>
 	<script
-		src="../../s1.yuehetong.com/sitemedia/bootstrap-3.3.6/js/bootstrap.min.js"></script>
-	<!--[if IE 10]><script src="../../s1.yuehetong.com/sitemedia/bootstrap-3.3.6/js/ie10-viewport-bug-workaround.js"></script><![endif]-->
+		src="/static/sitemedia/bootstrap-3.3.6/js/bootstrap.min.js"></script>
+	<!--[if IE 10]><script src="/static/sitemedia/bootstrap-3.3.6/js/ie10-viewport-bug-workaround.js"></script><![endif]-->
 	<script
-		src="../../s1.yuehetong.com/sitemedia/handsontable/handsontable.full.min.js"></script>
-	<script src="../../s1.yuehetong.com/sitemedia/js/gt.js"></script>
-	<script src="../../s1.yuehetong.com/sitemedia/js/common.js"></script>
+		src="/static/sitemedia/handsontable/handsontable.full.min.js"></script>
+	<script src="/static/sitemedia/js/gt.js"></script>
+	<script src="/static/sitemedia/js/common.js"></script>
 	<article class='tips-hid'>
 		<h3>专利许可需注意什么问题？</h3>
 		<div id='tips-hid-5c499350a1537865a59a11af51e0cdd1-0'>
@@ -1478,7 +1472,7 @@ A.info:hover {
 			<p></p>
 		</div>
 	</article>
-	<script src='../../s1.yuehetong.com/sitemedia/js/echarts.min.v3.js'></script>
+	<script src='/static/sitemedia/js/echarts.min.v3.js'></script>
 	<script>var isOnTheTips = false;$(function(){$("#chartArea").show();var chartContainer ="<h2 class='chart-title'>专利许可需注意什么问题？</h2><div id='chartContainer5c499350a1537865a59a11af51e0cdd1' class='chartContainer' style='height:650px;' data-chartid='5c499350a1537865a59a11af51e0cdd1'></div><h2 class='chart-title'>许可费需注意什么问题？</h2><div id='chartContainer0f5b48cbf547bcdafd2165b5726bd1ac' class='chartContainer' style='height:240px;' data-chartid='0f5b48cbf547bcdafd2165b5726bd1ac'></div>";$('#chartArea').prepend("<div class='chart-area' id='chart-area'><div class='charts-tips-container' id='charts-tips-container'><div class='charts-tips-bt-area'><ul class='nav nav-tabs' role='tablist' id='tips-bt-area'><li role='presentation' id='tips-li1' class='active'><a href='#tips-bt1' role='tab' data-toggle='tab' id='tips-bt1-bt'>风险提示</a></li><li role='presentation' id='tips-li2'><a href='#tips-bt2' role='tab' data-toggle='tab'>相关法条</a></li></ul></div><div class='tab-content'><div role='tabpanel' class='tab-pane active' id='tips-bt1'></div><div role='tabpanel' class='tab-pane' id='tips-bt2'></div></div></div>" + chartContainer +
 "<div class='chart-info'>以上数据有不尽之处，仅供参考 <span class='chart-cp'>©悦合同</span></div></div>");refreshLine();$("#charts-tips-container").hover(function(){isOnTheTips=true;toggleMyTipsTick();},function(){isOnTheTips=false; curDateIndex=-1; toggleMyTipsTick();});});var gridOpt = {borderWidth: 0,x:85,y:0,x2:20,y2:30};var chartOpt = new Array();var chartTips = new Array();var colorPalette = [
 '#F95D4D','#84CA3B','#2C90EC','#FCD227','#70E1E6','#D762E3','#F2B852','#FA7BB8','#FA8D6C','#60C0DD','#D7504B','#C6E579','#F4E001','#F0805A','#26C0C0'
@@ -1508,11 +1502,11 @@ legend: {y: 'bottom',data:['许可费标准','许可费拖欠','付费条件'],s
 };function getChartTips( arrid ){for( key in chartTips){if( key == arrid ){return chartTips[key];}}return "";}var chartArr = new Array();var chartCla = "";var isChartsShow = false;function refreshLine( ){if( isChartsShow ) return;if( $(".chartContainer").length == 0 ) return;$(".chartContainer").each(function(){$("#chart-area").width($("#chart-area").parent().width()-2);var domId = $(this).attr("id");var chart = echarts.init(document.getElementById(domId), chartCla);chart.on('mouseover', showMyTips);chart.on('mouseout', hideMyTips);chartArr.push(chart);chart.showLoading();chart.setOption(chartOpt[domId]);chart.hideLoading();});isChartsShow = true;}var curDateIndex = -1;var preDateIndex = -1;var curChartId = "";var showDelay = 500;var tipsTimer = null;var curY = 0;function hideMyTips(param){curDateIndex = -1;toggleMyTipsTick();}function showMyTips( param ){var requireIndex = param.dataIndex;var seriesName = param.seriesName;if( requireIndex != curDateIndex || curChartId != seriesName){curDateIndex = requireIndex;preDateIndex = curDateIndex;curChartId = seriesName;toggleMyTipsTick();}}function toggleMyTipsTick(){if( !tipsTimer ){tipsTimer = setInterval("showMyTipsAct()",showDelay);}}function showMyTipsAct(){if( curDateIndex >= 0 || isOnTheTips ){$("#tips-bt1").html($("#tips-hid-" + curChartId + "-" + curDateIndex).html());$("#tips-bt2").html($("#laws-hid-" + curChartId + "-" + curDateIndex).html());var offsetTopIn = $("#chartContainer" + curChartId).offset().top;var offsetTopOut = $("#chart-area").offset().top;var contHeight = $("#chartContainer" + curChartId).height();var tempTop = offsetTopIn - offsetTopOut + 60;if( contHeight > 300 ){tempTop = offsetTopIn - offsetTopOut + contHeight - (3.8*preDateIndex + 4 )*12;}$("#tips-bt1").addClass("sel");$("#tips-bt2").removeClass("sel");$("#charts-tips-container").css("top",tempTop+"px").show();}else
 {$("#charts-tips-container").hide();$("#tips-bt1-bt").click();}clearInterval( tipsTimer );tipsTimer = null;}</script>
 	<script
-		src="../../s1.yuehetong.com/sitemedia/js/jquery_autotextarea.js"></script>
+		src="/static/sitemedia/js/jquery_autotextarea.js"></script>
 	<script
-		src="../../s1.yuehetong.com/sitemedia/js/jquery-ui-1.11.4.datepicker.min.js"></script>
+		src="/static/sitemedia/js/jquery-ui-1.11.4.datepicker.min.js"></script>
 	<script
-		src="../../s1.yuehetong.com/sitemedia/js/jquery.ui.datepicker-zh-CN.js"></script>
+		src="/static/sitemedia/js/jquery.ui.datepicker-zh-CN.js"></script>
 	<!-- Modal -->
 	<div class="modal fade" id="agreeModal" tabindex="-1" role="dialog"
 		aria-labelledby="agreeModal" aria-hidden="true">
@@ -1664,7 +1658,7 @@ legend: {y: 'bottom',data:['许可费标准','许可费拖欠','付费条件'],s
 	</div>
 	<!-- End Modal -->
 	<script>availChapidGlobal = [1003,1004,1023,1024,999,1006,1007,1009,1011,1010,1012,1013,1019,1027,1028,1022,1038,1040,1041,1042,1043,1044,1045,1000,1001,1002,1039,2470,2471,997,998,1005,1018];availChapidGlobal_std = [];</script>
-	<script src="../../s1.yuehetong.com/sitemedia/js/cdiy.js"></script>
+	<script src="/static/sitemedia/js/cdiy.js"></script>
 </body>
 </html>
 <script>(function(){var bp = document.createElement('script');var curProtocol = window.location.protocol.split(':')[0];if (curProtocol === 'https') {bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';}else {bp.src = 'http://push.zhanzhang.baidu.com/push.js';}var s = document.getElementsByTagName("script")[0];s.parentNode.insertBefore(bp, s);})();</script>

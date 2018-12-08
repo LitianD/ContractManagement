@@ -15,15 +15,15 @@
 <meta name="author" content="YCY, yuehetong.com">
 <link rel="icon" href="https://s1.yuehetong.com/favicon.ico">
 <link
-	href="../s1.yuehetong.com/sitemedia/bootstrap-3.3.6/css/bootstrap.min.css"
+	href="/static/sitemedia/bootstrap-3.3.6/css/bootstrap.min.css"
 	rel="stylesheet">
 <link
-	href="../s1.yuehetong.com/sitemedia/font-awesome-4.7.0/css/font-awesome.min.css"
+	href="/static/sitemedia/font-awesome-4.7.0/css/font-awesome.min.css"
 	rel="stylesheet">
-<link href="../s1.yuehetong.com/sitemedia/css/main.css" rel="stylesheet">
+<link href="/static/sitemedia/css/main.css" rel="stylesheet">
 <script
-	src="../s1.yuehetong.com/sitemedia/bootstrap-3.3.6/js/html5shiv.min.js"></script>
-<script src="../s1.yuehetong.com/sitemedia/Respond/respond.min.js"></script>
+	src="/static/sitemedia/bootstrap-3.3.6/js/html5shiv.min.js"></script>
+<script src="/static/sitemedia/Respond/respond.min.js"></script>
 <link
 	href="https://s1.yuehetong.com/sitemedia/Respond/respond-proxy.html"
 	id="respond-proxy" rel="respond-proxy" />
@@ -81,10 +81,14 @@ A.info:hover {
 					class="logo2">专业合同服务商</span>
 			</div>
 			<div id="navbar-menu">
-				<span id='top-main-menu'><a href='report.html' class='btn'>悦读</a><a
-					href='event.html' class='btn'>悦活动</a><a href='hetongfanben.html'
-					class='btn'>智能合同</a><a href='xiehetong.html' class='btn'>写合同</a><a
-					href='gaihetong.html' class='btn'>审合同</a></span><a
+				<span id='top-main-menu'>
+					<a href='report.html' class='btn'>悦读</a>
+					<a href='event.html' class='btn'>悦活动</a>
+					<a href='../hetongfanben' class='btn'>智能合同</a>
+					<a href='../xiehetong' class='btn'>写合同</a>
+					<a href='../gaihetong' class='btn'>审合同</a>
+				</span>
+					<a
 					href='javascript:toggleMore();' class='btn' id='top-nav-bt'><i
 					class="fa fa-bars" aria-hidden="true"></i></a><span id='nav-login-area'><div
 						id='top-my-menu'>
@@ -97,8 +101,11 @@ A.info:hover {
 				<script>hasLogin = false;
 				</script>
 					<!--<a href='#' class='btn' data-toggle="modal" data-target="#modalLogin">登录</a>-->
-					<a href='#' class='btn' data-toggle="modal" data-target="#modalReg"
-					id='modalReg-bt'><i class="fa fa-user-o"></i> 登陆</a></span>
+					<!--<a href='#' class='btn' data-toggle="modal" data-target="#modalReg"id='modalReg-bt'><i class="fa fa-user-o"></i> 登陆</a>-->
+					<a class='btn' href='/my' id='mbt'><i class='fa fa-vine'></i>{{username}}</a>
+					<a class='btn' href='/logout' id='mbt'><i class="fa fa-user-o"></i>登出</a>
+					</span>
+					
 			</div>
 		</div>
 	</nav>
@@ -137,18 +144,16 @@ A.info:hover {
 				<!-- 知识产权 -->
 				<div class='col-md-3 col-sm-4 col-xs-6 i-c-item-outer'>
 					<div class='i-c-item'>
-						<a href='contract/cp.html' title='知识产权相关合同范本'><div
-								class='i-c-p i-c-p7'>
-								<h2 class='i-c-ph'>知识产权</h2>
-							</div></a>
+						<a href='contract/cp.html' title='知识产权相关合同范本'>
+						<div class='i-c-p i-c-p7'>
+							<h2 class='i-c-ph'>知识产权</h2>
+						</div>
+						</a>
 						<ul class='i-c-list'>
-							<li><a href='diy/zhuanlijishuxukehetong.html'
-								title='专利技术许可合同'>专利技术许可合同</a></li>
+							<li><a href='../zhuanlijishuxukehetong' title='专利技术许可合同'>专利技术许可合同</a></li>
 							<li><a href='diy/zhuanlizhuanranghetong.html' title='专利转让合同'>专利转让合同</a></li>
-							<li><a href='diy/shangbiaoxukeshiyonghetong.html'
-								title='商标许可使用合同'>商标许可使用合同</a></li>
-							<li><a href='diy/shangbiaozhuanranghetong.html'
-								title='商标转让合同'>商标转让合同</a></li>
+							<li><a href='diy/shangbiaoxukeshiyonghetong.html' title='商标许可使用合同'>商标许可使用合同</a></li>
+							<li><a href='diy/shangbiaozhuanranghetong.html' title='商标转让合同'>商标转让合同</a></li>
 						</ul>
 						<a href='contract/cp.html' class='more-bt'>更多></a>
 					</div>
@@ -477,7 +482,7 @@ A.info:hover {
 			class="fa fa-angle-up" aria-hidden="true"></i></a><a id='rnav-wx'
 			class='rnav-wx' data-cont='微信客服'><i class="fa fa-weixin"></i></a>
 		<div id='rnav-wxc' class='rnav-wxc'>
-			<img src='../s1.yuehetong.com/sitemedia/pics/rnav-wx1.jpg'
+			<img src='/static/sitemedia/pics/rnav-wx1.jpg'
 				alt='微信客服1'>
 			<div id='rnav-wxd'>
 				微信扫码咨询<br>请备注“<b>合同服务</b>”
@@ -490,15 +495,15 @@ A.info:hover {
 		<div id='uitipsbar'>&times;</div>
 		<div id='uitipscont'></div>
 	</div>
-	<script src="../s1.yuehetong.com/sitemedia/js/jquery-1.12.1.min.js"></script>
+	<script src="/static/sitemedia/js/jquery-1.12.1.min.js"></script>
 	<script
-		src="../s1.yuehetong.com/sitemedia/js/jquery.placeholder.min.js"></script>
+		src="/static/sitemedia/js/jquery.placeholder.min.js"></script>
 	<script>$('#modal-login-name').placeholder();$('#modal-login-pwd').placeholder();$('#modal-reg-name').placeholder();$('#modal-reg-pwd').placeholder();$('#search-key').placeholder();$('#search-key2').placeholder();</script>
 	<script
-		src="../s1.yuehetong.com/sitemedia/bootstrap-3.3.6/js/bootstrap.min.js"></script>
-	<!--[if IE 10]><script src="../s1.yuehetong.com/sitemedia/bootstrap-3.3.6/js/ie10-viewport-bug-workaround.js"></script><![endif]-->
-	<script src="../s1.yuehetong.com/sitemedia/js/gt.js"></script>
-	<script src="../s1.yuehetong.com/sitemedia/js/common.js"></script>
+		src="/static/sitemedia/bootstrap-3.3.6/js/bootstrap.min.js"></script>
+	<!--[if IE 10]><script src="/static/sitemedia/bootstrap-3.3.6/js/ie10-viewport-bug-workaround.js"></script><![endif]-->
+	<script src="/static/sitemedia/js/gt.js"></script>
+	<script src="/static/sitemedia/js/common.js"></script>
 </body>
 </html>
 <script>(function(){var bp = document.createElement('script');var curProtocol = window.location.protocol.split(':')[0];if (curProtocol === 'https') {bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';}else {bp.src = 'http://push.zhanzhang.baidu.com/push.js';}var s = document.getElementsByTagName("script")[0];s.parentNode.insertBefore(bp, s);})();</script>
