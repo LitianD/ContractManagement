@@ -27,4 +27,5 @@ urlpatterns = [
     url(r'^zhuanlijishuxukehetong/$', views.zhuanlijishuxukehetong),
     url(r'^home/$', views.home),
     url(r'^logout/$', views.logout),
+    url(r'^my/$', views.my),
 ]

@@ -120,8 +120,9 @@ A.info:hover {
 		</div>
 		<div class='row'>
 			<div class="col-sm-9">
-				<div id='app-main-warn-cont'></div>
-				<form action='/xiehetong/submit' method='POST' id='qa-form'
+	
+			<div id='app-main-warn-cont'></div>
+				<form action='/xiehetong/' method='POST' id='qa-form'
 					enctype="multipart/form-data">
 					<div class="form-group app-b">
 						<div>
@@ -180,8 +181,7 @@ A.info:hover {
 					<p>
 				</div>
 				<div>
-					<a href='javascript:submitQ();' class='btn btn-primary disabled'
-						role='button' id='a-create'>提 交</a>
+					<a href='javascript:submitQ();' class='btn btn-primary disabled' role='button' id='a-create'>提 交</a>
 				</div>
 				<div class='white-block com-list'>
 					<input type='hidden' id='ctablename' value='xie_entrance'>
@@ -579,7 +579,7 @@ A.info:hover {
 					<h2 class='mb-title'>我的合同</h2>
 					<ul class='relate-list'></ul>
 					<div>
-						<a href='my/xie.html' class='mb-bu-a morebt'>我所有合同 ></a>
+						<a href='../my/' class='mb-bu-a morebt'>我所有合同 ></a>
 					</div>
 				</div>
 			</div>
@@ -812,5 +812,21 @@ A.info:hover {
 </body>
 </html>
 <script>(function(){var bp = document.createElement('script');var curProtocol = window.location.protocol.split(':')[0];if (curProtocol === 'https') {bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';}else {bp.src = 'http://push.zhanzhang.baidu.com/push.js';}var s = document.getElementsByTagName("script")[0];s.parentNode.insertBefore(bp, s);})();</script>
-<script>function submitQ(){var qa = $.trim($("#qa-cont").val());if( qa == "" ){var warntips = "提交的内容不允许为空";var html = "<div class='alert alert-danger' role='alert' id='alertmsg'><button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button><span id='alertmsg-cont'>" + warntips + "</span></div>";$("#app-main-warn-cont").html(html);}else if( hasLogin )$("#qa-form").submit();else
-{$.post("/xiehetong/tempsave",{"qa":qa},function(data){},'json');$("#alertRegTipsCont").html("悦合同温馨提示：请登录后使用该功能");$("#alertRegTips").show();canLoginCallBack = true;$("#modalReg").modal("show");}}function loginCallBack(){window.location.reload();}</script>
+<script>function submitQ(){
+var qa = $.trim($("#qa-cont").val());
+if( qa == "" ){
+	var warntips = "提交的内容不允许为空";
+	var html = "<div class='alert alert-danger' role='alert' id='alertmsg'><button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button><span id='alertmsg-cont'>" + warntips + "</span></div>";
+	$("#app-main-warn-cont").html(html);
+	}
+	else 
+		$("#qa-form").submit();
+	//else
+	//{$.post("/xiehetong/tempsave",{"qa":qa},function(data){},'json');
+	//$("#alertRegTipsCont").html("悦合同温馨提示：请登录后使用该功能");
+	//$("#alertRegTips").show();
+	//canLoginCallBack = true;$("#modalReg").modal("show");
+	//}
+}
+function loginCallBack(){window.location.reload();}
+</script>
