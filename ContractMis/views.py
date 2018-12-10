@@ -104,7 +104,7 @@ def login(request):
         if name is not None:
             request.session['USER'] = username
             request.session['NAME'] = name
-            return HttpResponseRedirect('/home/')
+            return HttpResponseRedirect('/home')
         else:
             return render(request, 'yuehetong.html', {'warnning': '账号或密码错误'})
     else:

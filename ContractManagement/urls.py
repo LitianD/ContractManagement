@@ -22,15 +22,15 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     url(r'^$', views.login),
     url(r'^login$', views.login),
-    url(r'^gaihetong/$', views.gaihetong),
+    url(r'^gaihetong$', views.gaihetong),
     url(r'^gaihetong/submit$', views.gaihetong),
     url(r'^xiehetong/$', views.xiehetong),
     url(r'^service/pricing$', views.pricing_view),
     url(r'^service/agreement$', views.agreement_view),
     url(r'^hetongfanben/$', views.home),
     url(r'^zhuanlijishuxukehetong$', views.zhuanlijishuxukehetong),
-    url(r'^home/$', views.home),
+    url(r'^home$', views.home),
     url(r'^logout/$', views.logout),
-    url(r'^my/$', views.my),
+    url(r'^my$', views.my),
     url(r'^.*.html$', views.home)
 ]

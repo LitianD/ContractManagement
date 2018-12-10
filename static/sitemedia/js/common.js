@@ -370,10 +370,10 @@ $(function() {
         // if (b.target && b.target.id == "nav-login-area") {
         //     return
         // }
-        var a = $("#nav-login-area");
-        if (!a.is(":hidden")) {
-            a.slideUp(300)
-        }
+        // var a = $("#nav-login-area");
+        // if (!a.is(":hidden")) {
+        //     a.slideUp(300)
+        // }
     });
     $("#com-star>i").hover(function() {
         var a = $(this);
@@ -1041,21 +1041,21 @@ var handlerEmbed = function(b) {
         sendPCode(a, inputid)
     })
 };
-if (!hasLogin) {
-    $.ajax({
-        url: "/captcha/get?t=" + (new Date()).getTime(),
-        type: "get",
-        dataType: "json",
-        success: function(a) {
-            initGeetest({
-                gt: a.gt,
-                challenge: a.challenge,
-                new_captcha: a.new_captcha,
-                width: "100%",
-                product: "bind",
-                offline: !a.success
-            },
-            handlerEmbed)
-        }
-    })
-};
+// if (!hasLogin) {
+//     $.ajax({
+//         url: "/captcha/get?t=" + (new Date()).getTime(),
+//         type: "get",
+//         dataType: "json",
+//         success: function(a) {
+//             initGeetest({
+//                 gt: a.gt,
+//                 challenge: a.challenge,
+//                 new_captcha: a.new_captcha,
+//                 width: "100%",
+//                 product: "bind",
+//                 offline: !a.success
+//             },
+//             handlerEmbed)
+//         }
+//     })
+// };
