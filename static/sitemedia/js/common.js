@@ -64,9 +64,9 @@ function login() {
     if ($("#modalLogin .lblerr").length > 0) {
         return
     }
-    if (!$("#modalLoginErr").is(":hidden")) {
-        return
-    }
+    // if (!$("#modalLoginErr").is(":hidden")) {
+    //     return
+    // }
     var a = $.trim($("#modal-login-name").val());
     var b = $.trim($("#modal-login-pwd").val());
     var d = true;
@@ -364,12 +364,12 @@ $(function() {
         $("#modalPwdErrCont").html("")
     });
     $(document).click(function(b) {
-        if ($(window).width() > 990) {
-            return
-        }
-        if (b.target && b.target.id == "nav-login-area") {
-            return
-        }
+        // if ($(window).width() > 990) {
+        //     return
+        // }
+        // if (b.target && b.target.id == "nav-login-area") {
+        //     return
+        // }
         var a = $("#nav-login-area");
         if (!a.is(":hidden")) {
             a.slideUp(300)

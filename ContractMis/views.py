@@ -1,12 +1,16 @@
-from django.shortcuts import render
-from django.http import HttpResponse,HttpResponseRedirect
+from django.shortcuts import render, redirect
+from django.http import HttpResponse, HttpResponseRedirect
 import json
 from ContractMis import models
 import time
+
 # Create your views here.
 
 
 # 写合同
+from ContractMis.models import Contract
+
+
 def xiehetong(request):
     username = request.session.get('USER')
     if username is not None:
@@ -14,10 +18,13 @@ def xiehetong(request):
             return render(request, 'xiehetong.html', {'username': request.session['NAME']})
         else:
             # POST方法提交合同
-            title = request.POST['qa-cont']
-            abstract = request.POST['qa-cont']
-            content = '姓名：'+request.POST['cname']+'\n手机号：'+request.POST['cphone']+'\n邮箱'+request.POST['cemail']+request.POST['qa-cont']
-            save_contract(request.session.get('USER'), title, abstract, content)
+            # title = request.POST['qa-cont']
+            # abstract = request.POST['qa-cont']
+            content = request.POST['qa-cont']
+            cname = request.POST['cname']
+            cphone = request.POST['cphone']
+            cemail = request.POST['cemail']
+            save_contract(request.session.get('USER'), cname, cphone, cemail, content)
             return render(request, 'xiehetong.html', {'username': request.session['NAME'], 'error_msg': '提交成功'})
     else:
         return HttpResponseRedirect('/?user_errors=1')
@@ -29,9 +36,18 @@ def gaihetong(request):
     if username is not None:
         if if_access(username):
             if request.method == "GET":
-                return render(request, 'gaihetong.html', {'username': request.session['NAME']})
+                contracts = Contract.objects.all()
+                return render(request, 'gaihetong.html', {'username': request.session['NAME'],
+                                                          'contracts': contracts})
             else:
-                pass
+                price = request.POST['aprice']
+                cname = request.POST['cname']
+                cphone = request.POST['cphone']
+                cemail = request.POST['cemail']
+                qa_cont = request.POST['qa-cont']
+                id = request.POST['id']
+                save_checkinfo(id, cname, cphone, cemail, price, qa_cont)
+                return render(request, 'gaihetong.html', {'username': request.session['NAME'], 'error_msg': '提交成功'})
         return HttpResponseRedirect('/home/?user_errors=2')
     else:
         return HttpResponseRedirect('/?user_errors=1')
@@ -46,7 +62,8 @@ def home(request):
         if request.method == 'GET':
             user_errors = request.GET.get('user_errors')
             if user_errors == '2':
-                return render(request, 'hetongfanben.html', {'username': request.session['NAME']}, {'error_msg': '没有权限'})
+                return render(request, 'hetongfanben.html', {'username': request.session['NAME']},
+                              {'error_msg': '没有权限'})
 
         return render(request, 'hetongfanben.html', {'username': request.session['NAME']})
     else:
@@ -58,7 +75,7 @@ def zhuanlijishuxukehetong(request):
     username = request.session.get('USER')
     if username is not None:
         if request.method == "GET":
-            return render(request, 'zhuanlijishuxukehetong.html', {'username': request.session['NAME']})
+            return render(request, 'diy/zhuanlijishuxukehetong.html', {'username': request.session['NAME']})
         else:
             pass
     else:
@@ -70,7 +87,9 @@ def my(request):
     username = request.session.get('USER')
     if username is not None:
         if request.method == "GET":
-            return render(request, 'myhetong.html', {'username': request.session['NAME']})
+            contracts = get_contract_list(username)
+            return render(request, 'myhetong.html', {'username': request.session['NAME'],
+                                                     'contracts': contracts})
         else:
             pass
     else:
@@ -125,47 +144,47 @@ def if_access(username):
 
 # 获取合同列表
 def get_contract_list(username):
-    contracts = {}
     objs = models.Contract.objects.filter(username=username)
-    list = []
+    contracts = []
     for item in objs:
-        contract = dir()
-        contract['id'] = item.id
+        contract = dict()
+        contract['contract_id'] = item.contract_id
         contract['title'] = item.title
         contract['result'] = item.results
-        contract['abstract'] = item.abstract
+        contract['name'] = item.name
         contract['content'] = item.content
+        contract['phone'] = item.phone
+        contract['price'] = item.price
+        contract['email'] = item.email
         contract['time'] = item.time
-        check = []
-        objs2 = models.CheckInfo.objects.filter(contract_id=item.id)
-        for item2 in objs2:
-            checkinfo = dir()
-            checkinfo['contract_id'] = item2.contract_id
-            checkinfo['time'] = item2.time
-            checkinfo['result'] = item2.results
-            checkinfo['content'] = item2.content
-            check.append(checkinfo)
-        contract['checkInfos'] = check
-        list.append(contract)
-    contracts['username'] = username
-    contracts['contracts'] = list
-
+        contract['username'] = username
+        contracts.append(contract)
     return contracts
 
 
 # 保存合同
-def save_contract(username, title, abstract, content):
+def save_contract(username, cname, cphone, cemail, content, title="默认", abstract=""):
     result = '未审查'
-    localtime = time.asctime(time.localtime(time.time()))
-    models.Contract.objects.create(username=username, title=title, abstract=abstract, content=content, results=result, time=localtime)
+    models.Contract.objects.create(username=username, name=cname, phone=cphone, email=cemail, title=title,
+                                   abstract=abstract, content=content, results=result,
+                                   )
 
 
 # 保存checkInfo
-def save_checkinfo(contract_id, result, content):
-    localtime = time.asctime(time.localtime(time.time()))
-    models.Contract.objects.create(contract_id=contract_id ,content=content, results=result, time=localtime)
+def save_checkinfo(contract_id, cname, cphone, ceamil, price, content, result="通过"):
+    models.CheckInfo.objects.create(contract_id=contract_id,
+                                    content=content,
+                                    results=result,
+                                    name=cname,
+                                    phone=cphone,
+                                    email=ceamil,
+                                    price=price)
+    models.Contract.objects.filter(contract_id=contract_id).update(results='通过审查')
 
 
-# def create_warn(warntips):
-#     html = "<div class='alert alert-danger' role='alert' id='alertmsg'><button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button><span id='alertmsg-cont'>" + warntips + "</span></div>"
-#     return html
+def pricing_view(request):
+    return render(request, 'service/pricing.html')
+
+
+def agreement_view(request):
+    return render(request, 'service/agreement.html')
