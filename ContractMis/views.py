@@ -25,7 +25,7 @@ def xiehetong(request):
             cphone = request.POST['cphone']
             cemail = request.POST['cemail']
             save_contract(request.session.get('USER'), cname, cphone, cemail, content)
-            return render(request, 'xiehetong.html', {'username': request.session['NAME'], 'error_msg': '提交成功'})
+            return render(request, 'xiehetong.html', {'username': request.session['NAME'], 'warnning': '提交成功'})
     else:
         return HttpResponseRedirect('/?user_errors=1')
 
@@ -47,7 +47,7 @@ def gaihetong(request):
                 qa_cont = request.POST['qa-cont']
                 id = request.POST['id']
                 save_checkinfo(id, cname, cphone, cemail, price, qa_cont)
-                return render(request, 'gaihetong.html', {'username': request.session['NAME'], 'error_msg': '提交成功'})
+                return render(request, 'gaihetong.html', {'username': request.session['NAME'], 'warnning': '提交成功'})
         return HttpResponseRedirect('/home/?user_errors=2')
     else:
         return HttpResponseRedirect('/?user_errors=1')
@@ -62,8 +62,7 @@ def home(request):
         if request.method == 'GET':
             user_errors = request.GET.get('user_errors')
             if user_errors == '2':
-                return render(request, 'hetongfanben.html', {'username': request.session['NAME']},
-                              {'error_msg': '没有权限'})
+                return render(request, 'hetongfanben.html', {'username': request.session['NAME'] ,'warnning': '没有权限'})
 
         return render(request, 'hetongfanben.html', {'username': request.session['NAME']})
     else:
@@ -111,7 +110,7 @@ def login(request):
     else:
         print(request.GET.get('user_errors'))
         if request.GET.get('user_errors') == '1':
-            return render(request, 'yuehetong.html', {'error_msg': "请先登录"})
+            return render(request, 'yuehetong.html', {'warnning': "请先登录"})
         return render(request, 'yuehetong.html')
 
 
@@ -163,15 +162,15 @@ def get_contract_list(username):
 
 
 # 保存合同
-def save_contract(username, cname, cphone, cemail, content, title="默认", abstract=""):
+def save_contract(username, cname, cphone, cemail, content, title="默认", abstract="",price=3000):
     result = '未审查'
     models.Contract.objects.create(username=username, name=cname, phone=cphone, email=cemail, title=title,
-                                   abstract=abstract, content=content, results=result,
+                                   abstract=abstract, content=content, results=result, price=price
                                    )
 
 
 # 保存checkInfo
-def save_checkinfo(contract_id, cname, cphone, ceamil, price, content, result="通过"):
+def save_checkinfo(contract_id, cname, cphone, ceamil, content, result="通过", price=3000):
     models.CheckInfo.objects.create(contract_id=contract_id,
                                     content=content,
                                     results=result,
