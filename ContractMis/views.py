@@ -25,7 +25,7 @@ def xiehetong(request):
             cphone = request.POST['cphone']
             cemail = request.POST['cemail']
             save_contract(request.session.get('USER'), cname, cphone, cemail, content)
-            return render(request, 'xiehetong.html', {'username': request.session['NAME'], 'warnning': '提交成功'})
+            return render(request, 'xiehetong.html', {'username': request.session['NAME'], 'error_msg': '提交成功'})
     else:
         return HttpResponseRedirect('/?user_errors=1')
 
@@ -62,7 +62,7 @@ def home(request):
         if request.method == 'GET':
             user_errors = request.GET.get('user_errors')
             if user_errors == '2':
-                return render(request, 'hetongfanben.html', {'username': request.session['NAME'] ,'warnning': '没有权限'})
+                return render(request, 'hetongfanben.html', {'username': request.session['NAME'], 'warnning': '没有权限'})
 
         return render(request, 'hetongfanben.html', {'username': request.session['NAME']})
     else:
