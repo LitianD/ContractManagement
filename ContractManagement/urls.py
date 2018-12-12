@@ -28,7 +28,7 @@ urlpatterns = [
     url(r'^.*/service/pricing$', views.pricing_view),
     url(r'^.*/service/agreement$', views.agreement_view),
     url(r'^hetongfanben/$', views.home),
-    url(r'^zhuanlijishuxukehetong$', views.zhuanlijishuxukehetong),
+    url(r'^zhuanlijishuxukehetong/$', views.zhuanlijishuxukehetong),
     url(r'^home/$', views.home),
     url(r'^logout/$', views.logout),
     url(r'^my/$', views.my),

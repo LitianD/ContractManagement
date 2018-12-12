@@ -6,11 +6,10 @@ import time
 
 # Create your views here.
 
-
-# 写合同
 from ContractMis.models import Contract
 
 
+# 写合同
 def xiehetong(request):
     username = request.session.get('USER')
     if username is not None:
